@@ -1,5 +1,7 @@
 package com.roosi.utils.weather;
 
+import com.roosi.utils.model.Property;
+
 public class Service {
 
 	static private Service mInstance = null;
@@ -11,13 +13,13 @@ public class Service {
 		return mInstance;
 	}
 
-	public CurrentWeather currentWeather;
+	public CurrentWeather currentWeather = new CurrentWeather();
 	
-	public CurrentForecast currentForecast;
+	public CurrentForecast currentForecast = new CurrentForecast();
+	
+	public Property<Boolean> refresh = new Property<Boolean>();
 	
 	private Service() {
-		currentWeather = new CurrentWeather();
-		currentForecast = new CurrentForecast();
 	}
 
 }

@@ -48,6 +48,7 @@ public class MainActivity extends Activity implements Observer {
 				mService.currentForecast, android.R.layout.two_line_list_item);
 		mForecastList.setAdapter(adapter);
 
+		mService.refresh.addObserver(this);
 		mService.currentWeather.addObserver(this);
 		mService.currentForecast.addObserver(this);
 		
@@ -66,6 +67,7 @@ public class MainActivity extends Activity implements Observer {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_refresh:
+			mService.refresh.set(true);
 			mService.currentWeather.clear();
 			mService.currentForecast.clear();
 			updateWeather(mService.currentWeather.get());
@@ -89,6 +91,9 @@ public class MainActivity extends Activity implements Observer {
 			else {
 				showError(mService.currentWeather.getError());
 			}
+		}
+		else if (observable == mService.refresh) {
+			
 		}
 	}	
 

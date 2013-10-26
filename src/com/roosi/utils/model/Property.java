@@ -2,7 +2,7 @@ package com.roosi.utils.model;
 
 import java.util.Observable;
 
-public abstract class Property<T> extends Observable {
+public class Property<T> extends Observable {
 	
 	private boolean mUpdating = false;
 	private boolean mRefreshing = false;
@@ -72,7 +72,19 @@ public abstract class Property<T> extends Observable {
 		notifyObservers(mValue);
 	}
 
-	protected abstract void refresh();
+	/**
+	 * Called when the value of the property should be refreshed from the original source.
+	 * 
+	 * Default implementation doesn't do anything.
+	 */
+	protected void refresh() {};
 
-	protected abstract void update();	
+	/**
+	 * Called when the value of the property should be updated to the original source.
+	 * 
+	 * Default implementation notifies observers that value has changed.
+	 */
+	protected void update() {
+		propertyChanged(mValue);
+	};	
 }
