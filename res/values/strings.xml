@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Utils</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+
+    <string name="document_uploading_in_progress">Document uploading in progress</string>
+	<string name="document_uploading_error">Error occurred while uploading</string>
+	<string name="document_uploaded_succesfully">Document uploaded successfully</string>
+	<string name="uploading_starts_when_service_is_available">Uploading starts when the service is available.</string>
+	<string name="uploading_started">Uploading started.</string>
+	
+	<string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+</resources>
